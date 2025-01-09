@@ -95,7 +95,7 @@ resource "azurerm_windows_virtual_machine" "example" {
 
 
 resource "azurerm_virtual_machine_extension" "Install_Python_VScode" {
-  name                 = "install-python-and-vscode1"
+  name                 = "install-Python-and-Vscode"
   virtual_machine_id   = azurerm_windows_virtual_machine.example.id
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
@@ -103,7 +103,7 @@ resource "azurerm_virtual_machine_extension" "Install_Python_VScode" {
 
   settings = <<SETTINGS
     {
-      "fileUris": ["https://chozhanscript.blob.core.windows.net/scriptpythonblob/install.ps1?sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2025-01-01T14:31:18Z&st=2025-01-01T06:31:18Z&spr=https,http&sig=EBslYZs7NI%2Bo3IRJ6cjjtU1jHJC12Lli55Jlf4BKdbA%3D"],
+      "fileUris": ["https://chozhanscript.blob.core.windows.net/scriptpythonblob/install.ps1?sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2025-01-25T12:16:35Z&st=2025-01-09T04:16:35Z&spr=https,http&sig=Ba3wqiuitIEIXecL6ZyJ4TpP9%2Bss4nCVTtJgnvwVIy8%3D"],
       "commandToExecute": "powershell.exe -ExecutionPolicy Bypass -File install.ps1"
     }
   SETTINGS
